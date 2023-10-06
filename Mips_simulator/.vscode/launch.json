@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/liuvivian/Library/Mobile Documents/com~apple~CloudDocs/Study/大三上/体系结构/仿真实验 1",
+      "program": "/Users/liuvivian/Library/Mobile Documents/com~apple~CloudDocs/Study/大三上/体系结构/仿真实验 1/build/Debug/outDebug"
+    }
+  ]
+}

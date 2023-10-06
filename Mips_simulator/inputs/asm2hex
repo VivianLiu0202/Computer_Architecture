@@ -1,0 +1,46 @@
+#!/usr/bin/python3
+
+import os
+import sys
+
+import  argparse, subprocess
+
+# # parse arguments
+# parser = argparse.ArgumentParser()
+# parser.add_argument("fasm", metavar="input.s", help="the MIPS assembly file (ASCII)")
+# args = parser.parse_args()
+
+# fasm = args.fasm
+# fhex = os.path.splitext(args.fasm)[0] + ".x"
+
+# # run SPIM (the actual MIPS assembler)
+# SPIM = "/usr/local/bin/spim"
+# cmd = [SPIM, "-notrap", "-asm", fasm, fhex]
+# subprocess.call(cmd)
+
+# # Check if the expected output file is generated
+# output_file = fhex + ".text.dat"
+# if not os.path.isfile(output_file):
+#     print(f"Error: Failed to generate {output_file}.")
+#     sys.exit(1)   
+
+# # SPIM outputs many files; but we are interested in only one
+# cmd = ["mv", output_file, fhex]
+# subprocess.call(cmd)
+
+# # remove unnecessary two lines from the file
+# with open(fhex, 'r') as file:
+#     lines = file.readlines()
+# lines = [line.lstrip() for line in lines[2:]]
+# data = ''.join(lines)
+# data = '\n'.join(data.split())
+# with open(fhex, 'w') as file:
+#     file.write(data)
+
+# # remove all other files
+# cmd = ["rm", fhex + ".*.dat"]
+# cmd = str.join(' ', cmd)
+# subprocess.call(cmd, shell=True)  # we need a shell to expand the wildcard
+
+# print(f"Conversion of {fasm} to {fhex} completed successfully.")
+os.system("java -jar Mars4_5.jar " + sys.argv[1] +" dump .text HexText " + sys.argv[1][:-2]+".x")
